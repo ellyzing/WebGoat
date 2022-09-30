@@ -23,6 +23,11 @@ stages {
             recordIssues(tools: [findBugs(useRankAsPriority: true)])
         }
     }
+    stage('DependencyCheck') {
+        steps{
+            recordIssues(tools: [owaspDependencyCheck()])
+        }
+    }
 
 }
 }
