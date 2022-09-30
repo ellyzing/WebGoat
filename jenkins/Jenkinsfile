@@ -12,6 +12,12 @@ stages {
 		checkout scm
         }
     }
+    stage('Build') {
+        steps {
+        ./mvnw clean install 
+        docker build -f Dockerfile . -t webgoat/webgoat
+        }
+    }
 
 }
 }
