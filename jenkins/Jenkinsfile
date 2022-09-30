@@ -16,7 +16,6 @@ stages {
         steps {
         sh 'chmod +x ./mvnw'
         sh './mvnw clean install' 
-        sh 'docker build -f Dockerfile . -t webgoat/webgoat'
         }
     }
 
