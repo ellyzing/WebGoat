@@ -1,3 +1,17 @@
 pipeline {
-    /* Ваши инструкции для конвейера */
+   agent {
+     node {
+      label 'TestNode' 
+   }
+}
+stages {
+    
+    stage('Checkout') {
+    steps {
+    	echo 'step Git Checkout'
+		checkout scm
+        }
+    }
+    stage('Build') { }
+    }
 }
