@@ -18,6 +18,11 @@ stages {
         sh './mvnw clean install' 
         }
     }
+    stage('FindBug') {
+        steps{
+            recordIssues(tools: [findBugs(useRankAsPriority: true)])
+        }
+    }
 
 }
 }
