@@ -14,8 +14,8 @@ stages {
     }
     stage('Build') {
         steps {
-        ls
-        cd WebGoat
+        sh 'ls'
+        sh 'cd WebGoat'
         sh 'mvnw clean install' 
         sh 'docker build -f Dockerfile . -t webgoat/webgoat'
         }
