@@ -20,7 +20,7 @@ stages {
     }
     stage('FindBug') {
         steps{
-            recordIssues(tools: [findBugs(useRankAsPriority: true)])
+            recordIssues aggregatingResults: true, tools: [findBugs(useRankAsPriority: true)]
         }
     }
     stage('DependencyCheck') {
