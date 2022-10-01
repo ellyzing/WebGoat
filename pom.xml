@@ -261,7 +261,23 @@
             </activation>
             <build>
                 <plugins>
-
+<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.3</version>
+                <executions>
+                    <execution>
+                        <id>failing-on-high</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>findbugs</goal>
+                        </goals>
+                        <configuration>
+                            <failOnError>true</failOnError>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>build-helper-maven-plugin</artifactId>
@@ -671,25 +687,5 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-<reporting>
-    <plugins>
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-            <version>2.5.2</version>
-            <configuration>
-                <!--
-                    Enables analysis which takes more memory but finds more bugs.
-                    If you run out of memory, changes the value of the effort element
-                    to 'low'.
-                -->
-                <effort>Max</effort>
-                <!-- Reports all bugs (other values are medium and max) -->
-                <threshold>Low</threshold>
-                <!-- Produces XML report -->
-                <xmlOutput>true</xmlOutput>
-            </configuration>
-        </plugin>
-    </plugins>
-</reporting>
+
 </project>
