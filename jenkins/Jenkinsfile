@@ -23,9 +23,18 @@ stages {
             recordIssues aggregatingResults: true, tools: [findBugs(useRankAsPriority: true)]
         }
     }
-    stage('DependencyCheck') {
-        steps{
-            recordIssues(tools: [owaspDependencyCheck()])
+        stage("OWASP Dependency-Check Vulnerabilities") {
+          steps {
+            configFileProvider([configFile(fileId: 'uuid', targetLocation: 'proxy.properties')]) {
+              dependencyCheck additionalArguments: '''
+                -f "ALL"
+                -o "reports"
+                -P "proxy.properties"
+                --suppression "dependency-check-known-issues.xml"
+                --disableAssembly
+                --disableYarnAudit
+                --failOnCVSS 7''', odcInstallation: 'OWASP-DC'
+            }
         }
     }
 
