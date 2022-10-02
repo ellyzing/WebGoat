@@ -260,7 +260,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <build>
-                    <pluginManagement>
+     <pluginManagement>
       <plugins>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -268,18 +268,9 @@
           <version>3.0.6-SNAPSHOT</version>
         </plugin>
   
-      </plugins>
-    </pluginManagement>
-    <!-- To use the plugin goals in your POM or parent POM -->
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.6-SNAPSHOT</version>
-      </plugin>
+ 
 
-    </plugins>
-                <plugins>
+   
 
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
@@ -359,6 +350,7 @@
                         </executions>
                     </plugin>
                 </plugins>
+             </pluginManagement>
             </build>
         </profile>
         <profile>
