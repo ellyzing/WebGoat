@@ -267,7 +267,7 @@
           <artifactId>findbugs-maven-plugin</artifactId>
           <version>3.0.6-SNAPSHOT</version>
         </plugin>
-        ...
+  
       </plugins>
     </pluginManagement>
     <!-- To use the plugin goals in your POM or parent POM -->
@@ -277,7 +277,7 @@
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>3.0.6-SNAPSHOT</version>
       </plugin>
-      ...
+
     </plugins>
                 <plugins>
 
@@ -678,7 +678,7 @@
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>3.0.6-SNAPSHOT</version>
       </plugin>
-      ...
+  
     </plugins>
   </reporting>
     <repositories>
